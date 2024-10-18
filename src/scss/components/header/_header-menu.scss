@@ -20,6 +20,8 @@
     {
         display: grid;
 
+        margin: $gap;
+
         align-items: center;
         @extend %container;
         gap: $gap;

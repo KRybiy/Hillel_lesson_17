@@ -22,7 +22,7 @@
             gap: $gap-x3;
             grid-template-columns: 1fr 255px;
         }
-        @include md
+        @include md-sm
         {
             gap: $gap-x2;
             grid-template-columns: 1fr 236px;
