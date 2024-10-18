@@ -883,6 +883,8 @@ a
 
 .footer
 {
+    min-height: 250px;
+
     background-color: #2d3651;
 }
 .footer__container
@@ -894,6 +896,8 @@ a
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+
+    margin-top: 4px;
 
     text-align: center;
 
@@ -920,8 +924,8 @@ a
     width: 75px;
     height: 2px;
     margin: 0 auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 19px;
+    margin-bottom: 19px;
 
     content: '';
 

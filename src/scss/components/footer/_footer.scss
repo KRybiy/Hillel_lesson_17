@@ -3,6 +3,8 @@
 
 .footer
 {
+    min-height: 250px;
+
     background-color: $color-primary;
 
     &__container
@@ -15,6 +17,8 @@
     &__icons
     {
         display: flex;
+
+        margin-top: 4px;
 
         text-align: center;
 
@@ -43,8 +47,8 @@
             width: 75px;
             height: 2px;
             margin: 0 auto;
-            margin-top: $gap;
-            margin-bottom: $gap;
+            margin-top: $gap - 1px;
+            margin-bottom: $gap - 1px;
 
             content: '';
 
