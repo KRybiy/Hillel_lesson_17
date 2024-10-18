@@ -1,0 +1,72 @@
+@use '../presets' as *;
+@use '../mixins' as *;
+
+.btn
+{
+    display: flex;
+
+    padding: .5em 1em;
+
+    transition: background-color .3s ease-in-out;
+    letter-spacing: .1em;
+
+    border-width: 2px;
+    border-style: solid;
+
+    align-items: center;
+    justify-content: center;
+
+    &:hover,
+    &:focus
+    {
+        background-color: $color-accent;
+    }
+}
+
+.btn--light
+{
+    border-color: $color-white;
+    background-color: rgba($color-white, .1);
+
+    @include lg-min
+    {
+        font-size: 1.125rem;
+
+        min-width: 250px;
+        min-height: 60px;
+    }
+    @include lg-md
+    {
+        min-width: 200px;
+        min-height: 50px;
+    }
+    @include md
+    {
+        min-width: 170px;
+        min-height: 40px;
+    }
+}
+
+.btn--primary
+{
+    font-size: 1.125rem;
+
+    min-height: 60px;
+
+    border-color: $color-primary;
+    background-color: rgba($color-primary, .8);
+
+    @include sm-min
+    {
+        min-width: 350px;
+    }
+    @include sm
+    {
+        min-width: 100%;
+    }
+}
+
+.visually-hidden
+{
+    @include visually-hidden;
+}

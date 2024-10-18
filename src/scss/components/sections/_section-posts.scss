@@ -1,0 +1,104 @@
+@use '../../presets' as *;
+@use '../../mixins' as *;
+
+.posts
+{
+    @extend %section;
+
+    &__container
+    {
+        @extend %container;
+
+        &--grid
+        {
+            display: grid;
+
+            margin-bottom: $gap;
+
+            gap: $gap;
+            @include lg-min
+            {
+                grid-template-areas: 'a1 a1 a2 a3' 'a4 a5 a6 a6';
+                grid-template-columns: repeat(4, 1fr);
+            }
+            @include lg-md
+            {
+                grid-template-areas: 'a1 a1 a2' 'a3 a4 a4' 'a5 a5 a6';
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    }
+
+    &-item
+    {
+        transition: background-color .3s;
+
+        background-color: $color-gray-light;
+
+        &:hover
+        {
+            background-color: darken($color-gray-light, 5%);
+
+            a
+            {
+                color: $color-primary;
+            }
+
+            img
+            {
+                transition: transform .3s ease-out;
+                transform: scale(1.05);
+            }
+        }
+
+        &__link
+        {
+            transition: color .3s;
+
+            color: inherit;
+        }
+
+        &__image-container
+        {
+            display: flex;
+            overflow: hidden;
+
+            height: 300px;
+        }
+
+        &__content
+        {
+            line-height: 1.25;
+
+            padding: $gap-lg $gap;
+
+            text-align: center;
+        }
+
+        &__image
+        {
+            display: block;
+
+            width: 100%;
+
+            transition: transform .3s;
+
+            object-fit: cover;
+        }
+    }
+
+    &__actions
+    {
+        display: flex;
+
+        justify-content: center;
+    }
+}
+
+@for $i from 1 through 6
+{
+    .posts-item:nth-of-type(#{$i})
+    {
+        grid-area: a#{$i};
+    }
+}
